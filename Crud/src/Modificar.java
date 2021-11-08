@@ -20,15 +20,33 @@ import java.awt.Window.Type;
 public class Modificar extends JDialog {
 
 	/**
-	 * Declaracion de variables
+	 * Creacion de Jpanel contentPanel
 	 */
 	private final JPanel contentPanel = new JPanel();
+	/**
+	 * Creacion de JTextField textFieldNombre
+	 */
 	
 	public JTextField textFieldNombre = new JTextField();
-	JButton okButton = new JButton("OK");;
+	/**
+	 * Creacion de Botton okButton
+	 * */
+	JButton okButton = new JButton("OK");
+	/**
+	 * Creacion de JTextField textFieldUsuario
+	 * */
 	public JTextField textFieldUsuario;
+	/**
+	 * Creacion de JTextField textFieldContraseña
+	 * */
 	public JTextField textFieldContraseña;
+	/**
+	 * Creacion de JTextField textFieldConector
+	 * */
 	public JTextField textFieldConector;
+	/**
+	 * Creacion Jpanel buttonPane
+	 * */
 	JPanel buttonPane;
 	/**
 	 * Create the dialog.

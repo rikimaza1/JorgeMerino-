@@ -10,10 +10,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.UIManager;
 import javax.swing.JScrollPane;
 import java.sql.*;
 import java.awt.event.MouseAdapter;
@@ -25,12 +27,33 @@ import java.awt.event.MouseEvent;
  *
  */
 public class Principal extends JFrame {
+	/**
+	 * Creacion de Clase Jpanel contentPane
+	 * */
 	private JPanel contentPane;
+	/**
+	 * Creacion de clase Modificar
+	 * */
 	Modificar mod = new Modificar(this, true);
+	/**
+	 * Creacion de clase ConexionSQL
+	 * */
 	ConexionSQL cc = new ConexionSQL(mod, true);
+	/**
+	 * Creacion de clase Connection
+	 * */
 	Connection con = cc.conexion();
+	/**
+	 * Creacion de clase Añadir
+	 * */
 	Añadir add = new Añadir(this, true);
+	/**
+	 * Instancia de Jtable
+	 * */
 	public JTable table = new JTable();
+	/**
+	 * Creacion de Jbutton
+	 * */
 	JButton btnNewButtonAñadir;
 
 	/**
@@ -41,6 +64,7 @@ public class Principal extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					
 					Principal frame = new Principal();
 					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
@@ -55,6 +79,19 @@ public class Principal extends JFrame {
 	 * Create the frame.
 	 */
 	public Principal() {
+		try {
+			/**
+			 * Se añadido usabilidad look and feel
+			 * */
+				JFrame.setDefaultLookAndFeelDecorated(true);
+				JDialog.setDefaultLookAndFeelDecorated(true);
+//			  UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+//			  UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+//			  UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+			  UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		setTitle("Aplicacion de Jorge Merino");
 		mostrarDatos();
 		setResizable(false);

@@ -17,15 +17,31 @@ import java.awt.event.ActionEvent;
  *
  */
 public class Añadir extends JDialog {
-
+	/**
+	 * Creacion de contentPanel
+	 * */
 	private final JPanel contentPanel = new JPanel();
+	/**
+	 * Creacion de textfield Nombre
+	 * */
 	public JTextField textFieldNombre;
+	/**
+	 * Creacion de textfield apellidos
+	 * */
 	public JTextField textFieldApellidos;
+	/**
+	 * Creacion de textfield edad
+	 * */
 	public JTextField textFieldEdad;
+	/***
+	 * Creacion de boton ok
+	 * 
+	 */
 	JButton okButton  = new JButton("OK");
 
 	/**
 	 * Launch the application.
+	 * @param args arugmentos para el main
 	 */
 	public static void main(String[] args) {
 		try {
@@ -40,6 +56,8 @@ public class Añadir extends JDialog {
 
 	/**
 	 * Create the dialog.
+	 * @param owner es el frame padre
+	 * @param modal si es modal o no
 	 */
 	public Añadir(Frame owner, boolean modal) {
 		super(owner, modal);
